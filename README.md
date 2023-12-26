@@ -7,6 +7,7 @@ Built with ❤ by GDSC MPSTME (Mumbai) Application Development Team
 ## Latest Version
 v1.0.0
 ## Team for MPSTME OnTrack
+### 2023-24
 **Ayushya Shah** <br/>
 UI/UX Lead • Secretary In-charge <br/><br/>
 **Siddh Purohit** <br/>
@@ -19,4 +20,7 @@ Flutter Developer <br/><br/>
 Flutter Developer <br/><br/>
 **Shrijesh Yadav** <br/>
 Flutter Developer <br/><br/>
+**Vignesh Baiju** <br/>
+Flutter Developer <br/><br/>
+
 
