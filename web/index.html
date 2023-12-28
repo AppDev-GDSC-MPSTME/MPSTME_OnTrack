@@ -3,7 +3,7 @@
 <head>
   <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('flutter_service_worker.js?v=4208130789')
+    navigator.serviceWorker.register('flutter_service_worker.js?v=2644542716')
       .then((registration) => {
         // Registration was successful
         console.log('ServiceWorker registration successful with scope:', registration.scope);
@@ -48,15 +48,12 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "4208130789";
+    const serviceWorkerVersion = "2644542716";
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
 <body>
-  <div id="preloader" style="height: 100vh; width: 100vw; background-color: white; color: black; text-align:center;">
-    <h1>Loading..</h1>
-  </div>
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
@@ -66,9 +63,7 @@
         },
         onEntrypointLoaded: function(engineInitializer) {
           engineInitializer.initializeEngine().then(function(appRunner) {
-            try {document.getElementById('preloader').style.display = 'none';  } catch (error) {}
             appRunner.runApp();
-            try {document.getElementById('preloader').style.display = 'none';  } catch (error) {}
           });
         }
       });
