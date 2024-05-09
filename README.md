@@ -5,7 +5,7 @@ Developed using Flutter, MPSTME OnTrack is built with an aim of never letting an
 Built with ❤ by GDSC MPSTME (Mumbai) Application Development Team
 
 ## Latest Version
-v1.0.0
+v1.1.1
 ## Team for MPSTME OnTrack
 ### 2023-24
 **Ayushya Shah** <br/>
