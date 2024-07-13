@@ -9,8 +9,9 @@
   <meta name="author" content="">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
 
   <title>MPSTME OnTrack</title>
 
@@ -22,9 +23,16 @@
   <link rel="stylesheet" href="assets/css/fontawesome.css">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="assets/css/animated.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
 </head>
 
 <body>
+  <div class="background-container">
+    <div class="fade-mask">
+      <img src="./bg-effect.svg" class="background-image">
+      <img src="./bg-effect.svg" class="background-image">
+    </div>
+  </div>
 
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
@@ -46,17 +54,49 @@
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo">
-              <img src="assets/images/logo.svg" alt="">
+            <a href="index.html" class="logo" id="logo">
+              <img src="assets/images/logo.svg" alt="mpstme-ontrack">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
               <li class="scroll-to-section"><a href="#about">What is it?</a></li>
+              <li class="scroll-to-section"><a href="#socials">Socials</a></li>
               <li class="scroll-to-section"><a href="#team">Team</a></li>
-              <li class="scroll-to-section">
-                <div class="border-first-button"><a href="https://bit.ly/MPSTME_ONTRACK">Download APK</a></div>
+              <li class="scroll-to-section"><a><button id="dark-mode-toggle">Dark</button></a></li>
+              <!-- Dark Mode Toggle Script -->
+              <script>
+                const toggleButton = document.getElementById('dark-mode-toggle');
+                const logo = document.getElementById('logo');
+
+                toggleButton.addEventListener('click', () => {
+                  if (toggleButton.textContent === 'Light') {
+                    toggleButton.textContent = 'Dark';
+                    logo.innerHTML = '<img src="assets/images/logo.svg" alt="mpstme-ontrack">'
+                  } else {
+                    toggleButton.textContent = 'Light';
+                    logo.innerHTML = '<img src="assets/images/dark-logo.svg" alt="mpstme-ontrack">'
+                  }
+                  document.body.classList.toggle('dark-mode');
+                });
+                
+                function setDarkModeClass() {
+                  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.body.classList.add('dark-mode');
+                    logo.innerHTML = '<img src="assets/images/dark-logo.svg" alt="mpstme-ontrack">'
+                    toggleButton.textContent = 'Light';
+                  } else {
+                    document.body.classList.remove('dark-mode');
+                  }
+                }
+
+                // Set the initial class
+                setDarkModeClass();
+
+                // Listen for changes in the preference
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setDarkModeClass);
+              </script>
               </li>
             </ul>
             <a class='menu-trigger'>
@@ -79,14 +119,14 @@
               <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                 <div class="row">
                   <div class="col-lg-12">
-                    <h6>MPSTME OnTrack</h6>
-                    <h2>Your map to success, one classroom at a time</h2>
+                    <h6 class="hero">MPSTME OnTrack</h6>
+                    <h2 class="hero">Your map to success, one classroom at a time</h2>
                     <p>With features such as dynamic schedules, floor maps and class highlighting, make sure to never be
                       late for a class again!</p>
                   </div>
                   <div class="col-lg-12">
                     <div class="border-first-button scroll-to-section">
-                      <a href="https://bit.ly/MPSTME_ONTRACK">
+                      <a href="https://play.google.com/store/apps/details?id=com.gdscmpstme.mpstme_ontrack">
                         <table>
                           <tr>
                             <td><img src="assets/images/android.svg" style="display: inline; height: 1.5em;"></td>
@@ -96,12 +136,15 @@
                           </tr>
                         </table>
                       </a>
-                      <a href="web">
+                      <a href="https://apps.apple.com/us/app/mpstme-ontrack/id6525137090">
                         <table>
                           <tr>
-                            <td><img src="assets/images/web.svg" style="display: inline; height: 1.5em;"></td>
                             <td>
-                              <div style="padding-left: 0.5em;">Web Version for iOS</div>
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" style="display: inline; height: 1.3em;">
+                                <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+                              </svg>
+                            <td>
+                              <div style="padding-left: 0.5em;">Download for iOS</div>
                             </td>
                           </tr>
                         </table>
@@ -135,8 +178,8 @@
             <div class="col-lg-6 align-self-center wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
               <div class="about-right-content">
                 <div class="section-heading">
-                  <h6>About the app</h6>
-                  <h4>What is <em>MPSTME OnTrack</em></h4>
+                  <h6 class="hero">About the app</h6>
+                  <h4 class="hero">What is <em>MPSTME OnTrack</em></h4>
                   <div class="line-dec"></div>
                 </div>
                 <p>Developed using Flutter, MPSTME OnTrack is built with an aim of never letting anyone from MPSTME get
@@ -153,6 +196,63 @@
     </div>
   </div>
 
+  <div id="socials" class="services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h6>Let's Connect</h6>
+            <h4 style="text-transform: none !important;">Get our latest <em>updates here!</em></h4>
+            <div class="line-dec"></div>
+          </div>
+        </div>
+      </div>
+      <div class="socials" >
+        <div style="padding-bottom: 5%;" style="min-width: 10em;">
+          <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="social-card">
+              <!-- <img src="assets/images/Ayushya.jpeg" style="width: 5em; border-radius: 99px; margin-bottom: 1em; aspect-ratio: 1/1;"> -->
+              <a href="https://www.instagram.com/gdsc.mpstme/">
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="35">
+                  <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                </svg>
+              </a>
+              <div class="social-link" style="display: flex; flex-direction: column;">
+                <div class="social-title" style="font-weight: bold; text-transform: uppercase; font-size: 14px;">
+                  Follow us for more updates
+                </div>
+                <div style="color: #b0b0b0; font-size: 12px;">
+                  Have questions or suggestions? DM us!
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div style="padding-bottom: 5%;" style="min-width: 10em;">
+          <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="social-card">
+              <!-- <img src="assets/images/Ayushya.jpeg" style="width: 5em; border-radius: 99px; margin-bottom: 1em; aspect-ratio: 1/1;"> -->
+              <a href="#">
+                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="transform: scaleX(-1)" width="40">
+                  <path d="M168 80c-13.3 0-24 10.7-24 24V408c0 8.4-1.4 16.5-4.1 24H440c13.3 0 24-10.7 24-24V104c0-13.3-10.7-24-24-24H168zM72 480c-39.8 0-72-32.2-72-72V112C0 98.7 10.7 88 24 88s24 10.7 24 24V408c0 13.3 10.7 24 24 24s24-10.7 24-24V104c0-39.8 32.2-72 72-72H440c39.8 0 72 32.2 72 72V408c0 39.8-32.2 72-72 72H72zM176 136c0-13.3 10.7-24 24-24h96c13.3 0 24 10.7 24 24v80c0 13.3-10.7 24-24 24H200c-13.3 0-24-10.7-24-24V136zm200-24h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H376c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H376c-13.3 0-24-10.7-24-24s10.7-24 24-24zM200 272H408c13.3 0 24 10.7 24 24s-10.7 24-24 24H200c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80H408c13.3 0 24 10.7 24 24s-10.7 24-24 24H200c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/>
+                </svg>
+              </a>
+              <div class="social-link" style="display: flex; flex-direction: column;">
+                <div class="social-title" style="font-weight: bold; text-transform: uppercase; font-size: 14px;">
+                  Google DSC Blog
+                </div>
+                <div style="color: #b0b0b0; font-size: 12px;">
+                  Coming soon!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
   <div id="team" class="services section">
     <div class="container">
       <div class="row">
@@ -163,134 +263,443 @@
             <div class="line-dec"></div>
           </div>
         </div>
+        <div class="team-buttons">
+          <button id="team-24-button">TEAM 2023-24</button>
+          <button id="team-23-button">TEAM 2022-23</button>
+        </div>
+        <div id="team-23">
+          <div class="col">
+            <div class="section-heading wow fadeInDown nobottom" data-wow-duration="1s" data-wow-delay="0.5s">
+              <h6 style="text-align: left;">Core Team</h6>
+            </div>
+          </div>
+          <div class="row" style="z-index: 99; position: relative;">
+            <div class="col-lg-4" style="padding-bottom: 5%;">
+              <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div class="team-card">
+                  <img src="assets/images/Ayushya.jpeg" style="width: 5em; border-radius: 99px;">
+                  <div class="team-subsection">
+                    <div style="font-weight: bold;">
+                      Ayushya Shah
+                    </div>
+                    <div class="team-subscript">
+                      <div>
+                        UI/UX Lead
+                      </div>
+                      <div>
+                        Secretary In-charge
+                      </div>
+                    </div>
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4" style="padding-bottom: 5%;">
+              <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
+                <div class="team-card">
+                  <img src="assets/images/Siddh.jpg" style="width: 5em; border-radius: 99px;">
+                  <div class="team-subsection">
+                    <div style="font-weight: bold;">
+                      Siddh Purohit
+                    </div>
+                    <div class="team-subscript">
+                      <div>
+                        Flutter Lead
+                      </div>
+                      <div>
+                        Core In-charge
+                      </div>
+                    </div>
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4" style="padding-bottom: 5%;">
+              <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
+                <div class="team-card">
+                  <img src="assets/images/Vishesh.jpg" style="width: 5em; border-radius: 99px;">
+                  <div class="team-subsection">
+                    <div style="font-weight: bold;">
+                      Vishesh Giyani
+                    </div>
+                    <div class="team-subscript">
+                      <div>
+                        UI/UX Advisor
+                      </div>
+                      <div style="opacity: 0;">
+                        .
+                      </div>
+                    </div>
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="section-heading wow fadeInDown nobottom" data-wow-duration="1s" data-wow-delay="0.5s">
+              <h6 style="text-align: left; margin-top: 3em; margin-bottom: 1em;">Executive Team</h6>
+            </div>
+          </div>
+          <div class="row" style="z-index: 99; position: relative;">
+            <div class="col-lg-4" style="padding-bottom: 5%;">
+              <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
+                <div class="team-card">
+                  <img src="assets/images/Aditya.jpg" style="width: 5em; border-radius: 99px;">
+                  <div class="team-subsection">
+                    <div style="font-weight: bold;">
+                      Aditya Negi
+                    </div>
+                    <div class="team-subscript">
+                      <div>
+                        Flutter Developer
+                      </div>
+                    </div>
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4" style="padding-bottom: 5%;">
+              <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
+                <div class="team-card">
+                  <img src="assets/images/Manan.jpg" style="width: 5em; border-radius: 99px;">
+                  <div class="team-subsection">
+                    <div style="font-weight: bold;">
+                      Manan Gandhi
+                    </div>
+                    <div class="team-subscript">
+                      <div>
+                        Flutter Developer
+                      </div>
+                    </div>
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4" style="padding-bottom: 5%;">
+              <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
+                <div class="team-card">
+                  <img src="assets/images/Shrijesh.jpg" style="width: 5em; border-radius: 99px;">
+                  <div class="team-subsection">
+                    <div style="font-weight: bold;">
+                      Shrijesh Yadav
+                    </div>
+                    <div class="team-subscript">
+                      <div>
+                        Flutter Developer
+                      </div>
+                    </div>
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4" style="padding-bottom: 5%;">
+              <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
+                <div class="team-card">
+                  <img src="assets/images/Vignesh.jpeg" style="width: 5em; border-radius: 99px;">
+                  <div class="team-subsection">
+                    <div style="font-weight: bold;">
+                      Vignesh Baiju
+                    </div>
+                    <div class="team-subscript">
+                      <div>
+                        Flutter Developer
+                      </div>
+                    </div>
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div id="team-24">
         <div class="col">
           <div class="section-heading wow fadeInDown nobottom" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h6 style="text-align: left;">Core Team</h6>
+            <h6 style="text-align: left; margin-top: 3em; margin-bottom: 1em;">Core Team</h6>
           </div>
         </div>
+        <div class="row" style="z-index: 99; position: relative;">
+          <div class="col-lg-4" style="padding-bottom: 5%;">
+            <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
+              <div class="team-card">
+                <img src="https://cdn.gdscmpstme.com/medium_Manan_Gandhi_176fbdab7f/medium_Manan_Gandhi_176fbdab7f.jpeg" style="width: 5em; border-radius: 99px;">
+                <div class="team-subsection">
+                  <div style="font-weight: bold;">
+                    Manan Gandhi
+                  </div>
+                  <div class="team-subscript">
+                    <div>
+                      Head
+                    </div>
+                    <div>
+                      App Dev
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4" style="padding-bottom: 5%;">
+            <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
+              <div class="team-card">
+                <img src="https://cdn.gdscmpstme.com/medium_Aditya_Negi_49bdfd33c6/medium_Aditya_Negi_49bdfd33c6.jpeg" style="width: 5em; border-radius: 99px;">
+                <div class="team-subsection">
+                  <div style="font-weight: bold;">
+                    Aditya Negi
+                  </div>
+                  <div class="team-subscript">
+                    <div>
+                      Sub Head
+                    </div>
+                    <div>
+                      App Dev
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4" style="padding-bottom: 5%;">
+            <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
+              <div class="team-card">
+                <img src="https://cdn.gdscmpstme.com/medium_Yukta_Varma_bc6aa17d93/medium_Yukta_Varma_bc6aa17d93.jpeg" style="width: 5em; border-radius: 99px; aspect-ratio: 1/1; object-fit: cover;">
+                <div class="team-subsection">
+                  <div style="font-weight: bold;">
+                    Yukta Varma
+                  </div>
+                  <div class="team-subscript">
+                    <div>
+                      Sub Head
+                    </div>
+                    <div>
+                      App Dev
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4" style="padding-bottom: 5%;">
+            <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
+              <div class="team-card">
+                <img src="https://cdn.gdscmpstme.com/medium_Ashmit_Jain_1427e37079/medium_Ashmit_Jain_1427e37079.png" style="width: 5em; border-radius: 99px;">
+                <div class="team-subsection">
+                  <div style="font-weight: bold;">
+                    Ashmit Jain
+                  </div>
+                  <div class="team-subscript">
+                    <div>
+                      Head
+                    </div>
+                    <div>
+                      UI/UX Designer
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4" style="padding-bottom: 5%;">
+            <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
+              <div class="team-card">
+                <img src="https://cdn.gdscmpstme.com/medium_Aanchal_Shah_5ff373c32c/medium_Aanchal_Shah_5ff373c32c.jpg" style="width: 5em; border-radius: 99px;">
+                <div class="team-subsection">
+                  <div style="font-weight: bold;">
+                    Aanchal Shah
+                  </div>
+                  <div class="team-subscript">
+                    <div>
+                      Head
+                    </div>
+                    <div>
+                      UI/UX Designer
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4" style="padding-bottom: 5%;">
+            <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
+              <div class="team-card">
+                <img src="https://cdn.gdscmpstme.com/medium_Diya_Nayak_28c5c6c10c/medium_Diya_Nayak_28c5c6c10c.jpg" style="width: 5em; border-radius: 99px;">
+                <div class="team-subsection">
+                  <div style="font-weight: bold;">
+                    Diya Nayak
+                  </div>
+                  <div class="team-subscript">
+                    <div>
+                      Sub Head
+                    </div>
+                    <div>
+                      UI/UX Designer
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4" style="padding-bottom: 5%;">
+            <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
+              <div class="team-card">
+                <img src="https://cdn.gdscmpstme.com/medium_Sukhada_Gulhane_b3e28d815c/medium_Sukhada_Gulhane_b3e28d815c.jpeg" style="width: 5em; border-radius: 99px;">
+                <div class="team-subsection">
+                  <div style="font-weight: bold;">
+                    Sukhada Gulhane
+                  </div>
+                  <div class="team-subscript">
+                    <div>
+                      Sub Head
+                    </div>
+                    <div>
+                      UI/UX Designer
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4" style="padding-bottom: 5%;">
+            <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
+              <div class="team-card">
+                <img src="https://cdn.gdscmpstme.com/medium_Aditya_Sharma_b5f3b57456/medium_Aditya_Sharma_b5f3b57456.jpg" style="width: 5em; border-radius: 99px;">
+                <div class="team-subsection">
+                  <div style="font-weight: bold;">
+                    Aditya Sharma
+                  </div>
+                  <div class="team-subscript">
+                    <div>
+                      Head
+                    </div>
+                    <div>
+                      Web Dev
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            
+            <div class="col">
+              <div class="section-heading wow fadeInDown nobottom" data-wow-duration="1s" data-wow-delay="0.5s">
+                <h6 style="text-align: left;">Super Core Team</h6>
+              </div>
+            </div>
+            <div class="row" style="z-index: 99; position: relative;">
+              <div class="col-lg-4" style="padding-bottom: 5%;">
+                <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="team-card">
+                    <img src="assets/images/Siddh.jpg" style="width: 5em; border-radius: 99px;">
+                    <div class="team-subsection">
+                      <div style="font-weight: bold;">
+                        Siddh Purohit
+                      </div>
+                      <div class="team-subscript">
+                        <div>
+                          Secretary In-charge
+                        </div>
+                        <div>
+                          Flutter Advisor
+                        </div>
+                      </div>
+                    </div>
+      
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4" style="padding-bottom: 5%;">
+                <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="team-card">
+                    <img src="https://cdn.gdscmpstme.com/medium_Naitik_Lodha_a86fe68e0b/medium_Naitik_Lodha_a86fe68e0b.jpg" style="width: 5em; border-radius: 99px;">
+                    <div class="team-subsection">
+                      <div style="font-weight: bold;">
+                        Naitik Lodha
+                      </div>
+                      <div class="team-subscript">
+                        <div>
+                          Web Advisor
+                        </div>
+                      </div>
+                    </div>
+      
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+          </div>
       </div>
-      <div class="row" style="z-index: 99; position: relative;">
-        <div class="col-lg-4" style="padding-bottom: 5%;">
-          <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-            <div class="team-card">
-              <img src="assets/images/Ayushya.jpeg" style="width: 5em; border-radius: 99px; margin-bottom: 1em;">
-              <div style="font-weight: bold;">
-                Ayushya Shah
-              </div>
-              <div>
-                UI/UX Lead &bull; Secretary In-charge
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4" style="padding-bottom: 5%;">
-          <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
-            <div class="team-card">
-              <img src="assets/images/Siddh.jpg" style="width: 5em; border-radius: 99px; margin-bottom: 1em;">
-              <div style="font-weight: bold;">
-                Siddh Purohit
-              </div>
-              <div>
-                Flutter Lead &bull; Core In-charge
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4" style="padding-bottom: 5%;">
-          <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
-            <div class="team-card">
-              <img src="assets/images/Vishesh.jpg" style="width: 5em; border-radius: 99px; margin-bottom: 1em;">
-              <div style="font-weight: bold;">
-                Vishesh Giyani
-              </div>
-              <div>
-                UI/UX Advisor
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="section-heading wow fadeInDown nobottom" data-wow-duration="1s" data-wow-delay="0.5s">
-          <h6 style="text-align: left; margin-top: 3em; margin-bottom: 1em;">Executive Team</h6>
-        </div>
-      </div>
-      <div class="row" style="z-index: 99; position: relative;">
-        <div class="col-lg-4" style="padding-bottom: 5%;">
-          <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
-            <div class="team-card">
-              <img src="assets/images/Aditya.jpg" style="width: 5em; border-radius: 99px; margin-bottom: 1em;">
-              <div style="font-weight: bold;">
-                Aditya Negi
-              </div>
-              <div>
-                Flutter Developer
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4" style="padding-bottom: 5%;">
-          <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
-            <div class="team-card">
-              <img src="assets/images/Manan.jpg" style="width: 5em; border-radius: 99px; margin-bottom: 1em;">
-              <div style="font-weight: bold;">
-                Manan Gandhi
-              </div>
-              <div>
-                Flutter Developer
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4" style="padding-bottom: 5%;">
-          <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
-            <div class="team-card">
-              <img src="assets/images/Shrijesh.jpg" style="width: 5em; border-radius: 99px; margin-bottom: 1em;">
-              <div style="font-weight: bold;">
-                Shrijesh Yadav
-              </div>
-              <div>
-                Flutter Developer
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4" style="padding-bottom: 5%;">
-          <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" style="padding: 5% 7%;">
-            <div class="team-card">
-              <img src="assets/images/Vignesh.jpeg" style="width: 5em; border-radius: 99px; margin-bottom: 1em;">
-              <div style="font-weight: bold;">
-                Vignesh Baiju
-              </div>
-              <div>
-                Flutter Developer
-              </div>
-
-            </div>
-          </div>
-        </div>
-
 
 
       </div>
+      <img src="./swoosh.svg" class="background-image bottom">
     </div>
   </div>
 
 
-
   <!-- Scripts -->
+  <script>
+    function adjustBackgroundHeight() {
+        const backgroundContainer = document.querySelector('.background-container');
+        backgroundContainer.style.height = `${document.body.scrollHeight - 550}px`;
+    }
+
+    // Adjust height initially
+    adjustBackgroundHeight();
+
+    // Adjust height when the window is resized
+    window.addEventListener('resize', adjustBackgroundHeight);
+
+    // Optional: Adjust height periodically in case of dynamic content
+    setInterval(adjustBackgroundHeight, 500);
+  </script>
+  <script>
+    const team23 = document.getElementById('team-23')
+    const team23Button = document.getElementById('team-23-button');
+    
+    const team24 = document.getElementById('team-24');
+    const team24Button = document.getElementById('team-24-button');
+
+    team24Button.classList.add('active-team');
+    team23.style.display = 'none';
+    
+    team23Button.addEventListener('click', () => {
+      team24.style.display = 'none';
+      team24Button.classList.remove('active-team');
+      
+      team23.style.display = 'block';
+      team23Button.classList.add('active-team');
+    });
+    
+    team24Button.addEventListener('click', () => {
+      team23.style.display = 'none';
+      team23Button.classList.remove('active-team');
+
+      team24.style.display = 'block';
+      team24Button.classList.add('active-team');
+    });
+  </script>
+
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/animation.js"></script>
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/custom.js"></script>
-
 </body>
 
 </html>

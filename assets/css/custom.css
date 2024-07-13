@@ -33,6 +33,61 @@ font & reset css
 reset
 --------------------------------------------- 
 */
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Urbanist", sans-serif;
+}
+
+#dark-mode-toggle {
+  border-radius: 100em;
+  /* padding: 0.5em; */
+  border: none;
+  background-color: #4da6e7;
+  padding: 0.1em 1em;
+  outline: none;
+  color: black;
+}
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(173, 216, 230, 0) 0%, rgba(173, 216, 230, 0) 100%);
+  /* max-height: 300vh; */
+  /* max-height: 100%; */
+}
+
+.fade-mask {
+  position: relative;
+  height: 100%;
+  /* Apply the gradient mask to the content */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0.05));
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0.05));
+}
+
+.background-image {
+  opacity: 0.05;
+  width: 100vw;
+}
+
+.bottom {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+}
+
+.hero {
+  font-family: "Poppins", sans-serif;
+}
+
+svg {
+  fill: #b0b0b0;
+}
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
 s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
@@ -223,7 +278,6 @@ body {
   background-color: #232323;
   color: #fff !important;
 }
-
 
 
 /* 
@@ -887,30 +941,6 @@ Banner Style
   overflow: hidden;
 }
 
-.main-banner:after {
-  content: '';
-  background-image: url(../images/slider-left-dec.jpg);
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 0;
-  top: 60px;
-  width: 262px;
-  height: 625px;
-  z-index: 1;
-}
-
-.main-banner:before {
-  content: '';
-  background-image: url(../images/slider-right-dec.jpg);
-  background-repeat: no-repeat;
-  position: absolute;
-  right: 0;
-  top: 60px;
-  width: 1159px;
-  height: 797px;
-  z-index: -1;
-}
-
 .main-banner .left-content {
   margin-right: 15px;
 }
@@ -949,6 +979,58 @@ Banner Style
 }
 
 
+
+/* 
+---------------------------------------------
+Socials Style
+--------------------------------------------- 
+*/
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+}
+
+.social-icon:hover {
+  fill: #4da6e7;
+}
+
+.social-link {
+  border-left: 2px solid #b0b0b0;
+  padding-left: 1em;
+}
+
+.social-card{
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  display: flex;
+  gap: 1em;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5% 7%;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  text-align: left;
+  max-width: 100%;
+  align-items: center;
+  flex: 1 1 calc(50% - 1em); /* Adjust width for wrapping */
+  min-width: 380px; /* Ensure minimum width */
+  max-width: 30em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.social-title {
+  color: #555;
+}
 
 /* 
 ---------------------------------------------
@@ -1215,30 +1297,6 @@ Services Style
 .services {
   padding-top: 130px;
   position: relative;
-}
-
-.services:after {
-  content: '';
-  background-image: url(../images/services-left-dec.jpg);
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 0;
-  top: 0px;
-  width: 786px;
-  height: 1217px;
-  z-index: 0;
-}
-
-.services:before {
-  content: '';
-  background-image: url(../images/services-right-dec.jpg);
-  background-repeat: no-repeat;
-  position: absolute;
-  right: 0;
-  top: 400px;
-  width: 161px;
-  height: 413px;
-  z-index: 0;
 }
 
 .services .section-heading {
@@ -1600,4 +1658,42 @@ responsive
   border-radius: 10px;
   padding: 5% 7%;
   background-color: white;
+  display: flex;
+  text-align: left;
+  gap: 1em;
+  align-items: center;
+}
+
+.team-subsection {
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.5em; */
+  padding-left: 1em;
+  border-left: 2px solid #b0b0b0;
+}
+
+.team-subscript {
+  color: #b0b0b0;
+  font-size: 14px;
+}
+
+.team-buttons {
+  margin-bottom: 2em;
+  display: flex;
+  gap: 0.5em;
+}
+
+.team-buttons > button {
+  border: none;
+  outline: none;
+  background-color: #f0f0f0;
+  color: #555;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+}
+
+.active-team {
+  background-color: #4da6e7 !important;
+  color: #fff !important;
 }
