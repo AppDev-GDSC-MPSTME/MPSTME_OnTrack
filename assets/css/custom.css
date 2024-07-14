@@ -963,9 +963,14 @@ Banner Style
   margin-bottom: 20px;
 }
 
-.main-banner .left-content p {
+.main-banner .left-content  {
   margin-bottom: 30px;
   margin-right: 45px;
+}
+p{
+  margin:10px;
+  text-align: justify;
+  margin-bottom: 30px;
 }
 
 .main-banner .right-image {
