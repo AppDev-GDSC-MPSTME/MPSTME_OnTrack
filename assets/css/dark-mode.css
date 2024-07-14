@@ -168,3 +168,8 @@ body.dark-mode .header-area .main-nav .nav li a {
 body.dark-mode .scroll-to-section {
   border-color: #222222 !important;
 }
+
+body.dark-mode .js-preloader, 
+body.dark-mode .preloader-inner {
+	background-color: #222222 !important;
+}
