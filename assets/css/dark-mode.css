@@ -1,0 +1,170 @@
+body.dark-mode {
+	background-color: #222222;
+	color: #e0e0e0;
+}
+
+/* Global Styles */
+body.dark-mode,
+body.dark-mode .section-heading h4,
+body.dark-mode p {
+	color: #e0e0e0;
+}
+
+body.dark-mode .main-nav .menu-trigger span,
+body.dark-mode .main-nav .menu-trigger span:before,
+body.dark-mode .main-nav .menu-trigger span:after {
+  background-color: #fff;
+}
+
+body.dark-mode .main-nav .menu-trigger.active span:before,
+body.dark-mode .main-nav .menu-trigger.active span:after {
+  background-color: #fff;
+}
+
+/* Border Button */
+body.dark-mode .border-first-button a {
+	color: #e0e0e0 !important;
+	border-color: #e0e0e0 !important;
+}
+
+body.dark-mode .border-first-button a:hover {
+	background-color: #e0e0e0;
+	color: #222222 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  background-color: rgba(34, 34, 34, 0.01);
+}
+
+/* Pre-header */
+body.dark-mode .pre-header {
+	background-color: #222222;
+}
+
+body.dark-mode .pre-header ul.info li a {
+	color: #b0b0b0;
+}
+
+body.dark-mode .pre-header ul.info li a:hover {
+	color: #4da6e7;
+}
+
+body.dark-mode .pre-header ul.social-media li a {
+	background-color: #b0b0b0;
+}
+
+body.dark-mode .pre-header ul.social-media li a:hover {
+	background-color: #4da6e7;
+}
+
+/* Header */
+body.dark-mode .background-header {
+	background-color: #2e2e2e !important;
+}
+
+body.dark-mode .background-header .main-nav .nav li a {
+	color: #b0b0b0;
+}
+
+body.dark-mode .background-header .main-nav .nav li:hover a {
+	color: #4da6e7;
+}
+
+body.dark-mode .header-area {
+	background-color: #2e2e2e;
+}
+
+body.dark-mode .header-area .main-nav .nav li a {
+	color: #b0b0b0;
+}
+
+body.dark-mode .header-area .main-nav .nav li:hover a,
+body.dark-mode .header-area .main-nav .nav li a.active {
+	color: #4da6e7 !important;
+}
+
+/* Banner */
+
+body.dark-mode .main-banner .left-content h6 {
+	color: #4da6e7;
+}
+
+body.dark-mode .main-banner .left-content h2 {
+	color: #e0e0e0;
+}
+
+body.dark-mode .main-banner .left-content p {
+	color: #b0b0b0;
+}
+
+/* About Section */
+/* body.dark-mode #about {
+	background-color: #222222;
+} */
+
+body.dark-mode .background-image {
+  opacity: 0.5;
+  fill: #fff;
+}
+
+body.dark-mode .about-right-content p {
+	color: #b0b0b0;
+}
+
+/* Services Section */
+
+body.dark-mode .services .section-heading h4 {
+	color: #e0e0e0;
+}
+
+body.dark-mode .services .naccs .menu div {
+	background-color: #2c2c2c;
+	color: #e0e0e0;
+}
+
+body.dark-mode .services ul.nacc li.active {
+	background-color: #2c2c2c;
+}
+
+body.dark-mode .team-card {
+	background-color: #383838;
+}
+
+body.dark-mode .services .nacc .thumb h4 {
+	color: #e0e0e0;
+}
+
+body.dark-mode .services .nacc .thumb .main-white-button a {
+	background-color: #4da6e7;
+	color: #e0e0e0;
+}
+
+/* Socails */
+
+body.dark-mode .social-card {
+  background-color: #383838;
+  color: #b0b0b0;
+}
+
+body.dark-mode .social-title {
+  color: #fff;
+}
+
+/* Footer */
+
+body.dark-mode footer p {
+	color: #e0e0e0;
+}
+
+body.dark-mode footer p a {
+	color: #4da6e7;
+}
+
+body.dark-mode .header-area .main-nav .nav li a {
+  background-color: #2e2e2e !important;
+  color: #fff !important;
+}
+
+body.dark-mode .scroll-to-section {
+  border-color: #222222 !important;
+}
