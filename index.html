@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="assets/css/dark-mode.css">
 </head>
 
-<body>
+<body class="dark-mode">
   <div class="background-container">
     <div class="fade-mask">
       <img src="./bg-effect.svg" class="background-image">
@@ -55,15 +55,16 @@
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
             <a href="index.html" class="logo" id="logo">
-              <img src="assets/images/logo.svg" alt="mpstme-ontrack">
+              <img src="assets/images/dark-logo.svg" alt="mpstme-ontrack">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
               <li class="scroll-to-section"><a href="#about">What is it?</a></li>
+              <li class="scroll-to-section"><a href="#socials">Socials</a></li>
               <li class="scroll-to-section"><a href="#team">Team</a></li>
-              <li class="scroll-to-section"><a><button id="dark-mode-toggle">Dark</button></a></li>
+              <!-- <li class="scroll-to-section"><a><button id="dark-mode-toggle">Dark</button></a></li> -->
               <!-- Dark Mode Toggle Script -->
               <script>
                 const toggleButton = document.getElementById('dark-mode-toggle');
@@ -80,21 +81,21 @@
                   document.body.classList.toggle('dark-mode');
                 });
                 
-                function setDarkModeClass() {
-                  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    document.body.classList.add('dark-mode');
-                    logo.innerHTML = '<img src="assets/images/dark-logo.svg" alt="mpstme-ontrack">'
-                    toggleButton.textContent = 'Light';
-                  } else {
-                    document.body.classList.remove('dark-mode');
-                  }
-                }
+                // function setDarkModeClass() {
+                //   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                //     document.body.classList.add('dark-mode');
+                //     logo.innerHTML = '<img src="assets/images/dark-logo.svg" alt="mpstme-ontrack">'
+                //     toggleButton.textContent = 'Light';
+                //   } else {
+                //     document.body.classList.remove('dark-mode');
+                //   }
+                // }
 
                 // Set the initial class
-                setDarkModeClass();
+                // setDarkModeClass();
 
                 // Listen for changes in the preference
-                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setDarkModeClass);
+                // window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setDarkModeClass);
               </script>
               </li>
             </ul>
@@ -170,8 +171,8 @@
         <div class="col-lg-12">
           <div class="row">
             <div class="col-lg-6">
-              <div class="about-left-image wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
-                <img src="assets/images/mockup.png" alt="">
+              <div class="about-left-image wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s"> 
+                <img src="assets/images/mockup.png" alt="mockup" style="padding: 4em; padding-top: 0em;">
               </div>
             </div>
             <div class="col-lg-6 align-self-center wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -195,7 +196,7 @@
     </div>
   </div>
 
-  <div id="team" class="services section">
+  <div id="socials" class="services section">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -209,43 +210,42 @@
       <div class="socials" >
         <div style="padding-bottom: 5%;" style="min-width: 10em;">
           <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-            <div class="social-card">
-              <!-- <img src="assets/images/Ayushya.jpeg" style="width: 5em; border-radius: 99px; margin-bottom: 1em; aspect-ratio: 1/1;"> -->
-              <a href="https://www.instagram.com/gdsc.mpstme/">
-                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="35">
-                  <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
-                </svg>
-              </a>
-              <div class="social-link" style="display: flex; flex-direction: column;">
-                <div class="social-title" style="font-weight: bold; text-transform: uppercase; font-size: 14px;">
-                  Follow us for more updates
-                </div>
-                <div style="color: #b0b0b0; font-size: 12px;">
-                  Have questions or suggestions? DM us!
-                </div>
+            <a href="https://www.instagram.com/gdsc.mpstme" target="_blank">
+              <div class="social-card">
+                <!-- <img src="assets/images/Ayushya.jpeg" style="width: 5em; border-radius: 99px; margin-bottom: 1em; aspect-ratio: 1/1;"> -->
+                  <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="35">
+                    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                  </svg>
+                  <div class="social-link" style="display: flex; flex-direction: column;">
+                    <div class="social-title" style="font-weight: bold; text-transform: uppercase; font-size: 14px;">
+                      Follow us for more updates
+                    </div>
+                    <div style="color: #b0b0b0; font-size: 12px;">
+                      Have questions or suggestions? DM us!
+                    </div>
+                  </div>
               </div>
-
+            </a>
             </div>
-          </div>
         </div>
         <div style="padding-bottom: 5%;" style="min-width: 10em;">
           <div class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-            <div class="social-card">
-              <!-- <img src="assets/images/Ayushya.jpeg" style="width: 5em; border-radius: 99px; margin-bottom: 1em; aspect-ratio: 1/1;"> -->
-              <a href="#">
-                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="transform: scaleX(-1)" width="40">
-                  <path d="M168 80c-13.3 0-24 10.7-24 24V408c0 8.4-1.4 16.5-4.1 24H440c13.3 0 24-10.7 24-24V104c0-13.3-10.7-24-24-24H168zM72 480c-39.8 0-72-32.2-72-72V112C0 98.7 10.7 88 24 88s24 10.7 24 24V408c0 13.3 10.7 24 24 24s24-10.7 24-24V104c0-39.8 32.2-72 72-72H440c39.8 0 72 32.2 72 72V408c0 39.8-32.2 72-72 72H72zM176 136c0-13.3 10.7-24 24-24h96c13.3 0 24 10.7 24 24v80c0 13.3-10.7 24-24 24H200c-13.3 0-24-10.7-24-24V136zm200-24h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H376c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H376c-13.3 0-24-10.7-24-24s10.7-24 24-24zM200 272H408c13.3 0 24 10.7 24 24s-10.7 24-24 24H200c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80H408c13.3 0 24 10.7 24 24s-10.7 24-24 24H200c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/>
-                </svg>
-              </a>
-              <div class="social-link" style="display: flex; flex-direction: column;">
-                <div class="social-title" style="font-weight: bold; text-transform: uppercase; font-size: 14px;">
-                  Google DSC Blog
-                </div>
-                <div style="color: #b0b0b0; font-size: 12px;">
-                  Coming soon!
+            <a href="#">
+              <div class="social-card">
+                <!-- <img src="assets/images/Ayushya.jpeg" style="width: 5em; border-radius: 99px; margin-bottom: 1em; aspect-ratio: 1/1;"> -->
+                  <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="transform: scaleX(-1)" width="40">
+                    <path d="M168 80c-13.3 0-24 10.7-24 24V408c0 8.4-1.4 16.5-4.1 24H440c13.3 0 24-10.7 24-24V104c0-13.3-10.7-24-24-24H168zM72 480c-39.8 0-72-32.2-72-72V112C0 98.7 10.7 88 24 88s24 10.7 24 24V408c0 13.3 10.7 24 24 24s24-10.7 24-24V104c0-39.8 32.2-72 72-72H440c39.8 0 72 32.2 72 72V408c0 39.8-32.2 72-72 72H72zM176 136c0-13.3 10.7-24 24-24h96c13.3 0 24 10.7 24 24v80c0 13.3-10.7 24-24 24H200c-13.3 0-24-10.7-24-24V136zm200-24h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H376c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H376c-13.3 0-24-10.7-24-24s10.7-24 24-24zM200 272H408c13.3 0 24 10.7 24 24s-10.7 24-24 24H200c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80H408c13.3 0 24 10.7 24 24s-10.7 24-24 24H200c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/>
+                  </svg>
+                <div class="social-link" style="display: flex; flex-direction: column;">
+                  <div class="social-title" style="font-weight: bold; text-transform: uppercase; font-size: 14px;">
+                    Google DSC Blog
+                  </div>
+                  <div style="color: #b0b0b0; font-size: 12px;">
+                    Coming soon!
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
