@@ -2,12 +2,8 @@
     "courses": [
         "Course",
         "Btech",
-        "BBA",
-        "Bcom",
-        "MBA",
-        "Mtech",
-        "Mcom",
-        "Phd"
+        "BTI",
+        "MBATech"
     ],
     "divisions": [
         "Division",
