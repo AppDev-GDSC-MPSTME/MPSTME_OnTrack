@@ -47,14 +47,17 @@
     ],
     "streams": [
         "Stream",
-        "Computer Engineering",
+        "Computer",
         "Electronics and Telecommunications",
-        "Mechanical Engineering",
-        "Mechatronics Engineering",
+        "Mechanical",
+        "Mechatronics",
         "Data Science",
         "Information Technology",
         "Artificial Intelligence",
         "Cybersecurity",
-        "Computer Science with Business Systems"
+        "Computer Science with Business Systems",
+        "Civil",
+        "Computer Science with Data Science (311)",
+        "MCA"
     ]
 }
